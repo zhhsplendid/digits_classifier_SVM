@@ -45,3 +45,15 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Data
+MNIST/*
+
+# Output
+output/*
+*.mat
+
+# Matlab Auto Save
+src/*.asv
+
+
