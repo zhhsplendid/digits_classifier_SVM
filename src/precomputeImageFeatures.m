@@ -1,4 +1,4 @@
-function precomputeImageFeatures( input_args )
+function precomputeImageFeatures( )
     DATA_DIR = '../MNIST/';
     DATA_FILE_NAME = [DATA_DIR, 'digits.mat'];
        

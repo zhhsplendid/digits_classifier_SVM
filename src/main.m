@@ -26,23 +26,27 @@ function main(  )
     FIXED_PCA = 600;
     FIXED_SVM = 60000;
     FIXED_EIGEN = 50;
-    FIXED_METHOD = {'hog'};
-    FIXED_KERNEL = 2; %radial basis function: exp(-gamma*|u-v|^2) where gamma = 1/num_dimensions
+    FIXED_FEATURE = {'hog'};
+    FIXED_KERNEL = 0; %linear kernel function u' * v
 
+    if ~exist('precomputed_HoG_MNIST.mat', 'file')
+        fprintf('pre-compute image features');
+        precomputeImageFeatures();
+    end
     
-    %baselineExperiment(DATA_FILE_NAME, NUMBER_FOR_SVM_TRAIN, '../output/baseline.result');
-    %{
+    baselineExperiment(DATA_FILE_NAME, NUMBER_FOR_SVM_TRAIN, '../output/baseline.result');
+    
     svmExperiment(DATA_FILE_NAME,  NUMBER_FOR_PCA_TRAIN, FIXED_SVM, ...
-        FIXED_EIGEN, FEATURE_METHODS, FIXED_KERNEL, '../output/differentPCAtrainingSizes.result');
+        FIXED_EIGEN, FIXED_FEATURE, FIXED_KERNEL, '../output/differentPCAtrainingSizes.result');
     
     svmExperiment(DATA_FILE_NAME, FIXED_PCA, NUMBER_FOR_SVM_TRAIN, ...
         FIXED_EIGEN, FEATURE_METHODS, FIXED_KERNEL, '../output/differentSVMtrainingSizes.result');
     
     svmExperiment(DATA_FILE_NAME, FIXED_PCA, FIXED_SVM, ...
-        NUMBER_FOR_EIGEN, FEATURE_METHODS, FIXED_KERNEL, '../output/differentEigenUsed.result');
-    %}
-    svmExperiment(DATA_FILE_NAME, FIXED_PCA, FIXED_SVM, ...
-        FIXED_EIGEN, FIXED_METHOD, SVM_KERNEL, '../output/differentKernels.result');
+        NUMBER_FOR_EIGEN, FIXED_FEATURE, FIXED_KERNEL, '../output/differentEigenUsed.result');
+    
+    svmExperiment(DATA_FILE_NAME, FIXED_PCA, NUMBER_FOR_SVM_TRAIN, ...
+        FIXED_EIGEN, FIXED_FEATURE, SVM_KERNEL, '../output/differentKernels.result');
         
 end
 

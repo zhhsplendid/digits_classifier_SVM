@@ -1,0 +1,16 @@
+@misc{lecun1998mnist,
+  title={The MNIST database of handwritten digits},
+  author={LeCun, Yann and Cortes, Corinna and Burges, Christopher JC},
+  year={1998}
+}
+
+@article{cortes1995support,
+  title={Support-vector networks},
+  author={Cortes, Corinna and Vapnik, Vladimir},
+  journal={Machine learning},
+  volume={20},
+  number={3},
+  pages={273--297},
+  year={1995},
+  publisher={Springer}
+}
