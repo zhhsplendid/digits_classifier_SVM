@@ -21,10 +21,20 @@ Run the code:
 	2. Run the experiments:
 		run ./src/main.m in Matlab
 
+		Time cost:
+		The main.m has two stages. 
+			First, pre-computing HoG feature for MNIST, about 3 hours
+			Second, do experiments, about 1.5 hours
+
+		The pre-computing HoG features will be generated in ./src/precomputed_HoG_MNIST.mat
+		If you have the file ./src/precomputed_HoG_MNIST.mat in the folder ./src
+		The main function will not pre-compute. So from your second running, you cost 1.5 hour.
+		It can save time. I put the precomputing data in the folder but not upload to Github
+
 
 Result format:
 
-	Then there will be five result files generated under ./output
+	Then there will be five human readable result files generated under ./output
 
 	1. baseline.result
 		we don't use PCA and use linear kernel or SVM as baseline
