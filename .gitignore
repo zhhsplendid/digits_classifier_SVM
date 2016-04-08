@@ -57,3 +57,9 @@ output/*
 src/*.asv
 
 
+texDoc/data_table.xlsx
+texDoc/report.tex.bak
+texDoc/report.aux
+texDoc/report.blg
+texDoc/report.bbl
+texDoc/report.synctex.gz
