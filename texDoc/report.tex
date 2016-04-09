@@ -69,7 +69,7 @@ see \textbf{./src/svmExperiment.m}. The function firstly converts the image into
 see \textbf{./src/main/m}. The function specified the path for data files, the different parameters we used for experiments and run the \textbf{baselineExperiment.m} and \textbf{svmExperiment.m} with different parameters.
 
 \subsection{Run my code}
-see \textbf{./readme.txt} for running instructions. Note that it takes a few minutes to train and test by SVM. Running all experiments in \textbf{./src/main/m} costs about 1.5 hour. (not including pre-computing of features). Pre-computing features take about 3 hours. I attached pre-computing features in uploaded code so you don't need to run pre-computing feature step.
+see \textbf{./readme.txt} for running instructions. 
 
 \section{Experiment}
 To see how different parameters influence accuracy of SVM classification, we fixed some parameters and changed some parameters.
@@ -162,9 +162,9 @@ In this experiment, we use PCA + HOG, 60000 images to train SVM with linear kern
 \end{figure}
 
 \subsection{Different Kernels}
-In this experiment, we compare four types of kernels. 1, linear: $x' * y$. 2, polynomial: $ ( x' * y ) ^ 3 $. 3, radial basis: $\exp(-\gamma * |x-y| ^2)$. 4, sigmoid: $\tanh(\gamma * x' * y)$. In radial basis and sigmoid kernels $\gamma = 1/number\_of\_features$. The result was presented in Table \ref{t4} and Figure \ref{f3}. Although when we use all 60000 training images, those kernels can all achieve accuracy between 96\% and 98\%, the polynomial and sigmoid kernels can not got high accuracy when we only use 1000 training data. So you need more data to let polynomial and sigmoid kernels get high accuracy. So we can see different kind of kernels not only influence accuracy but also how many data you need to train the SVM. 
+In this experiment, we compare four types of kernels. 1, linear: $x' * y$. 2, polynomial: $ ( x' * y ) ^ 3 $. 3, radial basis: $\exp(-\gamma * |x-y| ^2)$. 4, sigmoid: $\tanh(\gamma * x' * y)$. In radial basis and sigmoid kernels $\gamma = 1/number\_of\_features$. The result was presented in Table \ref{t4} and Figure \ref{f3}. Although when we use all 60000 training images, those kernels can all achieve accuracy between 96\% and 98\%, the polynomial and sigmoid kernels can not got high accuracy when we only use 1000 training data. So you need more data to let polynomial and sigmoid kernels get high accuracy. So we can see different kind of kernels not only influence accuracy but also how many data you need to train the SVM.
 
- 
+
 \begin{table}
     \begin{center}
     \begin{tabular}{|c|c|c|}
@@ -189,7 +189,7 @@ In this experiment, we compare four types of kernels. 1, linear: $x' * y$. 2, po
       \hline
     \end{tabular}
     \end{center}
-    
+
     \caption{Impact of Different Kernels}
     \label{t4}
 \end{table}

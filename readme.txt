@@ -14,7 +14,7 @@ Requirement for runing my code
 Run the code:
 
 	There are 3 steps to run my code:
-	1. Put the file digits.mat under folder ./MNIST (or change the DATA_DIR 
+	1. Put the file digits.mat of homework1 under folder ./MNIST (or change the DATA_DIR 
 	and DATA_FILE_NAME in ./src/main.m and ./src/precomputed_HoG_MNIST.mat to
 	where you put your data)
 
